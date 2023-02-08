@@ -1,0 +1,10 @@
+<app-toolbar
+  [item]="toolbarItems"
+  (selectedOption)="action($event)"
+></app-toolbar>
+<ng-container *ngIf="userAction == 'main'">
+  <app-main></app-main>
+</ng-container>
+<ng-container *ngIf="userAction == 'calendar'">
+  <app-calendar></app-calendar>
+</ng-container>

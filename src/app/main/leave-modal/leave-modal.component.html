@@ -1,0 +1,111 @@
+<app-dialog-header
+  (onDialogClose)="onDialogClose()"
+  title="Apply Leave"
+></app-dialog-header>
+<mat-dialog-content class="mat-typography">
+  <form class="form" [formGroup]="form" novalidate style="height: 100%">
+    <div>
+      <!-- <app-auto-complete
+        optionRule="LEAVE_TYPE"
+        label="Leave Type"
+        [value]="form.get('leaveType')?.value"
+        (change)="onChange($event, 'leaveType')"
+      ></app-auto-complete> -->
+      <app-auto-complete
+        [options]="[
+          'Annual Leave',
+          'Sick Leave',
+          'Maternity Leave',
+          'Hospitalisation Leave'
+        ]"
+        label="Leave Type"
+        [value]="form.get('leaveType')?.value"
+        (change)="onChange($event, 'leaveType')"
+        [isValidate]="isFormValid"
+        [required]="true"
+      ></app-auto-complete>
+    </div>
+    <div>
+      <app-date-picker
+        label="From"
+        placeholder="Select a Date"
+        [value]="form.get('from')?.value"
+        (change)="onChange($event, 'from')"
+        [isValidate]="isFormValid"
+        [required]="true"
+      ></app-date-picker>
+      <div class="time-span-div">
+        <span class="time-span">
+          Please select one if you are taking half day leave
+        </span>
+      </div>
+      <app-radio-button
+        [value]="form.get('fromTime')?.value"
+        [options]="['a.m.', 'p.m.']"
+        (change)="onChange($event, 'fromTime')"
+      ></app-radio-button>
+    </div>
+    <div>
+      <app-date-picker
+        label="To"
+        placeholder="Select a Date"
+        [value]="form.get('to')?.value"
+        (change)="onChange($event, 'to')"
+        [isValidate]="isFormValid"
+        [required]="true"
+      ></app-date-picker>
+      <div class="time-span-div">
+        <span class="time-span">
+          Please select one if you are taking half day leave
+        </span>
+      </div>
+      <app-radio-button
+        [value]="form.get('toTime')?.value"
+        [options]="['a.m.', 'p.m.']"
+        (change)="onChange($event, 'toTime')"
+      ></app-radio-button>
+    </div>
+    <div>
+      <app-auto-complete
+        [options]="['songming', 'chewye']"
+        label="Approver"
+        [value]="
+          actionType == 'add'
+            ? form.get('approver')?.value
+            : form.get('approvedBy')?.value
+        "
+        (change)="
+          actionType == 'add'
+            ? onChange($event, 'approver')
+            : onChange($event, 'approvedBy')
+        "
+        [isValidate]="isFormValid"
+        [required]="true"
+      ></app-auto-complete>
+    </div>
+    <div>
+      <app-input
+        label="Remark"
+        [value]="form.get('remark')?.value"
+        (inputChange)="onChange($event, 'remark')"
+      ></app-input>
+    </div>
+    <div>
+      <app-upload
+        label="Attachment"
+        [value]="form.get('attachment')?.value"
+        (change)="onChange($event, 'attachment')"
+      ></app-upload>
+    </div>
+    <br />
+    <div>
+      <app-form-button
+        submitLabel="save"
+        position="left"
+        layout="horizontal"
+        (submit)="onFormSubmit()"
+        (reset)="resetForm()"
+      ></app-form-button>
+    </div>
+  </form>
+</mat-dialog-content>

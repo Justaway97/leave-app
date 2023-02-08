@@ -1,0 +1,52 @@
+<div class="main-body">
+  <div class="main-body-left">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="My Coming Leave">
+        <mat-card class="my-leave-card">
+          <!-- <mat-card-title class="col title">My Coming Leave</mat-card-title> -->
+          <mat-card-content class="content-body">
+            <app-table
+              [dataSource]="myComingLeaveDataSource"
+              [headers]="myComingLeaveHeaders"
+              (rowOption)="
+                onMenuSelect($event, originalMyComingLeaveDataSource)
+              "
+            ></app-table>
+          </mat-card-content> </mat-card
+      ></mat-tab>
+      <mat-tab label="Pending Approval">
+        <mat-card class="my-leave-card">
+          <!-- <mat-card-title class="col title">Pending Approval</mat-card-title> -->
+          <mat-card-content class="content-body">
+            <app-table
+              [dataSource]="myPendingLeaveApprovalDataSource"
+              [headers]="myPendingLeaveApprovalHeaders"
+              (rowOption)="
+                onMenuSelect($event, originalMyPendingLeaveApprovalDataSource)
+              "
+            ></app-table>
+          </mat-card-content> </mat-card
+      ></mat-tab>
+      <mat-tab label="History">
+        <mat-card class="my-leave-card">
+          <!-- <mat-card-title class="col title">History</mat-card-title> -->
+          <mat-card-content class="content-body">
+            <app-table
+              [dataSource]="myLeaveHistoryDataSource"
+              [headers]="myLeaveHistoryHeaders"
+            ></app-table>
+          </mat-card-content> </mat-card
+      ></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="main-body-right">
+    <mat-card class="my-leave-card">
+      <mat-card-title class="right-title">My Leave</mat-card-title>
+      <mat-card-content class="content-body">
+        <ng-container *ngFor="let l of leaves">
+          <label class="my-leave-detail">{{ l }}</label>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

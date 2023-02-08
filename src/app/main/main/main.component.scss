@@ -1,0 +1,37 @@
+.title {
+  padding: 1%;
+}
+
+.my-leave-card {
+  margin: 1%;
+}
+
+.content-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-body-left {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.main-body-right {
+  display: flex;
+  margin-left: auto;
+  padding: 1%;
+}
+
+.right-title {
+  padding: 5%;
+}
+
+.my-leave-detail {
+  margin: 3%;
+}

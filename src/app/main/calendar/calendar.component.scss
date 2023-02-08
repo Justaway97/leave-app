@@ -1,0 +1,66 @@
+.calendar-card {
+  margin: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar-card-child {
+  display: flex;
+  align-items: center;
+}
+
+.calendar {
+  margin: 1%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.day {
+  font-size: 1vw;
+  height: 1vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.date {
+  display: flex;
+}
+
+.filter-button {
+  padding-left: 20px;
+}
+
+.filter {
+  height: 70%;
+}
+
+mwl-calendar-month-cell {
+  background-color: darkgray !important;
+}
+
+.calendar-height {
+  height: 70%;
+}
+
+.mat-grid-tile-content {
+  font-size: 5vh;
+}
+
+.calendar-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
+  font-weight: bold;
+  padding-bottom: 20px;
+}

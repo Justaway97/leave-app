@@ -1,0 +1,36 @@
+<div class="main-div">
+  <mat-card>
+    <form #f="ngForm" [formGroup]="form" style="height: 100%">
+      <mat-card-title class="col title">Login</mat-card-title>
+      <mat-card-content>
+        <div class="col">
+          <app-input
+            placeholder="Username"
+            [value]="form.get('username')?.value"
+            (inputChange)="onChange($event, 'username')"
+            [isValidate]="isFormValid"
+            [required]="true"
+          ></app-input>
+        </div>
+        <div class="col">
+          <app-input
+            type="password"
+            placeholder="Password"
+            [value]="form.get('password')?.value"
+            (inputChange)="onChange($event, 'password')"
+            [isValidate]="isFormValid"
+            [required]="true"
+          ></app-input>
+        </div>
+        <div class="col">
+          <app-form-button
+            submitLabel="Login"
+            layout="horizontal"
+            (submit)="onFormSubmit(f.valid)"
+            (reset)="resetForm()"
+          ></app-form-button>
+        </div>
+      </mat-card-content>
+    </form>
+  </mat-card>
+</div>

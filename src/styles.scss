@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.component-error {
+  color: red;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+}
