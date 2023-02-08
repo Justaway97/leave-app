@@ -1,6 +1,6 @@
 # LeaveApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4. Clone another repository named template, create a folder and name it template under src/app/ and put the cloned repository under this folder
 
 ## Development server
 
